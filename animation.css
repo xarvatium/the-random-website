@@ -1,0 +1,81 @@
+/* This is the animation file. It makes the random generators switch. */
+
+/* This makes the dots fade to purple when active */
+@keyframes dot {
+    0% {background-color: white;}
+    5% {background-color: #783FF5;}
+    20% {background-color: #783FF5;}
+    25% {background-color: white;}
+    100% {background-color: white;}
+}
+
+.dot {
+    animation-name: dot;
+    animation-duration: 20s;
+    animation-iteration-count: infinite;
+}
+
+.dotarticle {
+    animation-delay: 4s;
+}
+
+.dotnumber {
+    animation-delay: 8s;
+}
+
+.dotcolor {
+    animation-delay: 12s;
+}
+
+.dotpicture {
+    animation-delay: 16s;
+}
+
+/* This makes the randomly generated things change 
+animating the pointer-events property makes links
+only clickable when visible */
+@keyframes headerText {
+    0% {opacity: 0%; pointer-events: none;}
+    5% {opacity: 100%; pointer-events: auto;}
+    20% {opacity: 100%; pointer-events: auto;}
+    25% {opacity: 0%; pointer-events: none;}
+    100% {opacity: 0%; pointer-events: none;}
+}
+
+.generatedBlock *, .toGenerate * {
+    animation-name: headerText;
+    animation-duration: 20s;
+    animation-iteration-count: infinite;
+}
+
+.article {
+    animation-delay: 4s;
+}
+
+.number {
+    animation-delay: 8s;
+}
+
+.color {
+    animation-delay: 12s;
+}
+
+.picture {
+    animation-delay: 16s;
+}
+
+.toGenArticle {
+    animation-delay: 4s;
+}
+
+.toGenNumber {
+    animation-delay: 8s;
+}
+
+.toGenColor {
+    animation-delay: 12s;
+}
+
+.toGenPicture {
+    animation-delay: 16s;
+}

@@ -1,55 +1,91 @@
+/*This defines the main font of the website*/
+@font-face {
+    font-family: 'Varela Round';
+    src: url(fonts/VarelaRound-Regular.ttf)
+}
+
+/* This defines the gradient that will be used for color throughout */
+:root {
+    --main-gradient: linear-gradient(120deg, #CA40F5, #783FF5)
+}
+
+/* This sets the background color for the page and some basic colors*/
 body {
-  background-color: #292929;
+    width: 100%;
+    height: 100%;
+    background-color: #181818;
+    font-family: Varela Round;
+    color: white;
 }
 
-.container {
-  align-items: center;
+/* Why does 10% cause it to go down about 25% of the page? CSS! That's why!*/
+.header {
+    margin-top: 10%;
 }
 
-.border {
-  margin-top: 10%;
-  border-radius: 25px;
-  background: #474747;
-  margin-left: 25%;
-  margin-right: 25%;
-  width: 50%;
-  height: 60%; 
+/* This causes the objects in the header to be in a row*/
+.header * {
+    display: inline-block;
+    vertical-align: middle;
 }
 
-.mainHeader {
-  padding-top: 12px;
-  font-size: 40px;
-  font-family: "Varela Round", sans-serif;
-  color: #BA70EB;
-  text-align: center;
+/* Make the header text a bit bigger */
+.headerBig {
+    font-size: 48px;
 }
 
-.mainBody {
-  text-align: center;
-  font-size: 21px;
-  font-family: "Varela Round", sans-serif;
-  color: #ca89f5;
-  padding: 22px;
-  padding-left: 34px;
-  padding-right: 34px;
+/* This makes the dots actually dots */
+.dot {
+    height: 5px;
+    width: 5px;
+    background-color: white;
+    border-radius: 50%;
+    display: block;
+    margin: 5px;
 }
 
-button {
-  overflow: hidden;
-  text-decoration: none;
-  border: none;
-  cursor: pointer;
-  font-size: 60px;
-  background: none;
-  position: absolute;
+.dots {
+    margin-right: 5px;
+    margin-left: 5px;
 }
 
-.discord {
-  bottom: 23%;
-  left: 30%;
+/* This makes all the possible generations overlap
+Note that toGenerate is in a parent Div. This makes it still
+follow the display:inline-block rule even though it displays
+as a grid */
+.toGenerate {
+    display: grid;
+    margin-left: 5px;
 }
 
-.github {
-  bottom: 23%;
-  left: 25.5%;
+.toGenerate * {
+    grid-column-start: 1;
+    grid-row-start: 1;
+    background: var(--main-gradient);
+    background-clip: unset;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    opacity: 0%;
+}
+
+/* This makes all the possible results overlap */
+.generatedBlock {
+    display: grid;
+}
+
+.generatedBlock * {
+    grid-column-start: 1;
+    grid-row-start: 1;
+    color: white;
+    opacity: 0%;
+    pointer-events: none;
+    font-size: 24px;
+}
+
+/* This sets up the background for the generated item */
+.genBlockParent {
+    float: right;
+    padding: 20px;
+    width: 40%;
+    background-image: var(--main-gradient)
 }
