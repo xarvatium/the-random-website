@@ -1,1 +1,241 @@
+/*This defines the main font of the website*/
+@font-face {
+    font-family: 'Varela Round';
+    src: url(fonts/VarelaRound-Regular.ttf)
+}
 
+/* This defines the gradient that will be used for color throughout */
+:root {
+    --main-gradient: linear-gradient(120deg, #CA40F5, #783FF5)
+}
+
+/* This sets the background color for the page and some basic colors*/
+body {
+    width: 100%;
+    height: 100%;
+    background-color: #181818;
+    font-family: Varela Round;
+    color: white;
+    margin: 0;
+}
+
+/* Why does 10% cause it to go down about 25% of the page? CSS! That's why!*/
+.header {
+    margin-top: 10%;
+}
+
+/* This causes the objects in the header to be in a row*/
+.header * {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+@media (max-width: 800px) {
+    .header * {
+        display: block;
+    }
+}
+
+/* Make the header text a bit bigger */
+.headerBig {
+    font-size: 48px;
+}
+
+/* This makes the dots actually dots */
+.dot {
+    height: 5px;
+    width: 5px;
+    background-color: white;
+    border-radius: 50%;
+    display: block;
+    margin: 5px;
+}
+
+@media (max-width: 800px) {
+    .dot {
+        display: inline-block;
+    }
+}
+
+.dots {
+    margin-right: 5px;
+    margin-left: 5px;
+}
+
+/* This makes all the possible generations overlap
+Note that toGenerate is in a parent Div. This makes it still
+follow the display:inline-block rule even though it displays
+as a grid */
+.toGenerate {
+    display: grid;
+    margin-left: 5px;
+}
+
+.toGenerate * {
+    grid-column-start: 1;
+    grid-row-start: 1;
+    background: var(--main-gradient);
+    background-clip: unset;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    opacity: 0%;
+}
+
+/* This makes all the possible results overlap */
+.generatedBlock {
+    display: grid;
+}
+
+.generatedBlock * {
+    grid-column-start: 1;
+    grid-row-start: 1;
+    color: white;
+    opacity: 0%;
+    pointer-events: none;
+    font-size: 24px;
+    overflow-wrap: break-word;
+}
+
+/* This sets up the background for the generated item */
+.genBlockParent {
+    float: right;
+    padding: 20px;
+    width: 50%;
+    background-image: var(--main-gradient);
+    box-shadow: 0px 5px 10px 0px #0000000c;
+}
+
+@media (max-width: 800px) {
+    .genBlockParent {
+        float: none;
+        width: 100%;
+    }
+    .generatedBlock * {
+        font-size: 18px;
+    }
+}
+
+/* This begins the footer section, which will stay anchored to the bottom */
+footer {
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
+    height: 50%;
+    background-color: #131313;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+@media (max-width: 800px) {
+    footer {
+      flex-direction: column;
+      position: relative;
+      margin-top: 20%
+    }
+  }
+
+/* Builds the logo section */
+.logo-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.logo-section img {
+    object-fit: scale-down;
+    margin-top: -10px;
+    width: 20vw;
+    height: 20vw;
+}
+
+.logo-section div {
+    font-size: 3vw;
+    background: var(--main-gradient);
+    background-clip: unset;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+@media (max-width: 800px) {
+    .logo-section img {
+      width: 200px;
+      height: 200px;
+    }
+    .logo-section div {
+        font-size: 20px;
+    }
+  }
+
+/* Styles the divider between the two parts of the footer */
+.footerDivider {
+    height: 80%;
+    background-color: white;
+    opacity: 10%;
+    width: 5px;
+    margin-left: 30px;
+    margin-right: 30px;
+    border-radius: 25px;
+}
+
+@media (max-width: 800px) {
+    .footerDivider {
+        display: none;
+    }
+}
+
+/* Styles the features */
+.features {
+    font-size: 1.5vw;
+    inline-size: 20%;
+}
+
+@media (max-width: 800px) {
+    .features {
+      font-size: 20px;
+      inline-size: 80%;
+    }
+  }
+
+.features * {
+    padding: 10px;
+}
+
+/* Styles the buttons */
+.buttons {
+    display: flex;
+    flex-direction: column;
+    height: 60%;
+    align-items: center;
+    justify-content: space-between;
+    align-content: space-between;
+    margin-left: 30px;
+}
+
+.actionButton {
+    padding: 10px;
+    background-color: #181818;
+    width: 300px;
+    text-align: center;
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+    box-shadow: 0px 5px 10px 0px #000000;
+}
+
+.addServer {
+    background: var(--main-gradient);
+}
+
+@media (max-width: 800px) {
+    .actionButton {
+      margin-top: 20px;
+      margin-bottom: 20px;
+    }
+    .buttons {
+        margin-bottom: 40px;
+        margin-left: 0px;
+    }
+  }
