@@ -30,6 +30,8 @@ const articles = ["https://en.wikipedia.org/wiki/Python_%28programming_language%
     "https://en.wikipedia.org/wiki/Netherlands",
     "https://en.wikipedia.org/wiki/Sociology",
     "https://en.wikipedia.org/wiki/Aten_(city)",
+    "https://en.wikipedia.org/wiki/Kennedy_Space_Center",
+
 ];
 
 const videos = ["https://youtu.be/dQw4w9WgXcQ", // Rick Roll
